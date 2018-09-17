@@ -6,7 +6,11 @@
 
     <groupId>com.zhang</groupId>
     <artifactId>Distributed_Project</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>Serialize-demo</module>
+    </modules>
 
 
 </project>
