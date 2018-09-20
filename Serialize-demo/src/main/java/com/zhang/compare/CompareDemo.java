@@ -28,13 +28,13 @@ public class CompareDemo {
 
     public static void main(String[] args) throws IOException {
         Person person = init();
-        // 使用jackson序列化 139ms,大小 25byte
+        // 使用jackson序列化 139ms,大小25byte
         executeWithJack(person);
         // 使用fastJson 199ms,大小 25byte
         executeWithFastJson(person);
         // 使用protoBuf 速度 25ms,大小 8byte
         executeWithProtoBuf(person);
-        // 使用hessian  速度 8ms,大小 58byte
+        // 使用hessian2 速度 8ms,大小 58byte
         executeWithHession(person);
     }
 
