@@ -12,6 +12,7 @@
         <module>Serialize-demo</module>
         <module>Rmi-Demo</module>
         <module>WebService-Demo</module>
+        <module>Zookeeper-Demo</module>
     </modules>
 
 
