@@ -1,12 +1,12 @@
 package com.zhang.zookeeper.javaApi.acl;
 
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
-
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.ACL;
+
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 工具类,为了测试zookeeper权限(ACL),封装了zookeeper一些api
@@ -16,7 +16,8 @@ import org.apache.zookeeper.data.ACL;
  */
 public class ZookeeperUtil {
     //连接地址
-    public static final String CONNECT_ADDR = "192.168.0.107,192.168.0.108,192.168.0.105";
+    public static final String CONNECT_ADDR = "10.153.2.23,10.153.2.24,10.153.2.26";
+
     //会话连接超时时间
     public static final int SESSION_TIMEOUT = 2000;
     //测试数据跟路径

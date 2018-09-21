@@ -12,7 +12,8 @@
         <module>Serialize-demo</module>
         <module>Rmi-Demo</module>
         <module>WebService-Demo</module>
-        <module>Zookeeper-Demo</module>
+        <module>socket-demo</module>
+        <module>zookeeper_api_demo</module>
     </modules>
 
 

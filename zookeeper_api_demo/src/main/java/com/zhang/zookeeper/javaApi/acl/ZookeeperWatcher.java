@@ -1,14 +1,16 @@
 package com.zhang.zookeeper.javaApi.acl;
-import java.util.concurrent.CountDownLatch;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.Watcher.Event.EventType;
 import org.apache.zookeeper.Watcher.Event.KeeperState;
+
+import java.util.concurrent.CountDownLatch;
 /**
  *
  * @author adai
  * @since 20170913 0132
  */
+
 /**
  * ZookeeperWatcher类,如果使用了watcher事件会触发该类的process方法。
  * 第一次连接zookeeper服务器的时候也会触发
