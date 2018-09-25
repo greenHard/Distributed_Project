@@ -3,7 +3,6 @@ package com.zhang.zookeeper.zkclient;
 import org.I0Itec.zkclient.IZkDataListener;
 import org.I0Itec.zkclient.ZkClient;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -15,7 +14,9 @@ public class ZKApiOperatorDemo {
     /**
      * 集群连接地址
      */
-    public static final String CONNECT_STRING = "192.168.0.101:2181,192.168.0.104:2181,192.168.0.105:2181";
+    // public static final String CONNECT_STRING = "192.168.0.101:2181,192.168.0.104:2181,192.168.0.105:2181";
+
+    private static final String CONNECT_STRING = "10.153.2.23:2181,10.153.2.24:2181,10.153.2.26:2181";
 
 
     /**
@@ -36,9 +37,12 @@ public class ZKApiOperatorDemo {
         zkClient.deleteRecursive("/zkClient");
         System.out.println("delete success..");
 
+        zkClient.deleteRecursive("/node");
+
         zkClient.createPersistent("/node");
+
         // 监听watcher
-        // 订阅数据改变
+        // 订阅节点数据改变
         zkClient.subscribeDataChanges("/node", new IZkDataListener() {
             @Override
             public void handleDataChange(String dataPath, Object data) throws Exception {
@@ -52,14 +56,20 @@ public class ZKApiOperatorDemo {
         });
         zkClient.writeData("/node", "zkClient write..");
         TimeUnit.SECONDS.sleep(2);
-        zkClient.delete("/node");
+        zkClient.deleteRecursive("/node");
         TimeUnit.SECONDS.sleep(2);
 
-        // 获取子节点
-        List<String> childrenList = zkClient.getChildren("/node");
-        System.out.println("node下面所有的子节点 ->" + childrenList);
+        // 监听子节点
+        zkClient.createPersistent("/node/children",true);
+        zkClient.subscribeChildChanges("/node/children", (parentPath, currentChilds) -> System.out.println("子节点变了..."));
+        zkClient.writeData("/node/children","123");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("/node/children data change...");
 
-        // TODO
+
+        // 获取子节点
+        //List<String> childrenList = zkClient.getChildren("/node");
+        //System.out.println("node下面所有的子节点 ->" + childrenList);
     }
 
 
