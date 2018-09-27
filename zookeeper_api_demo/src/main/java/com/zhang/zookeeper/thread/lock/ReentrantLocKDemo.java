@@ -3,7 +3,7 @@ package com.zhang.zookeeper.thread.lock;
 /**
  * @author <p>zhangyuyang160@gmail.com<p>
  * @ClassName: com.zhang.zookeeper.thread.lock.ReentrantLocKDemo
- * @Description: 重入锁和非重入锁Demo
+ * @Description: 重入锁Demo
  * @create 2018/09/25 18:33
  */
 public class ReentrantLocKDemo implements Runnable{
