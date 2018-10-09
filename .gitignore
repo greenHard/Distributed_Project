@@ -10,7 +10,4 @@ gen
 .mvn/
 mvnw
 mvnw.cmd
-Rmi-Demo/target/
-socket-demo/.gitignore
-socket-demo/target/
-zookeeper_api_demo/target/
+target
